@@ -10,7 +10,7 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 const cors_1 = __importDefault(require("cors"));
 app.use((0, cors_1.default)({
-    origin: "https://guided-backend-9hw5.onrender.com",
+    origin: "https://guided-edu.onrender.com",
     credentials: true
 }));
 app.use(express_1.default.json());
