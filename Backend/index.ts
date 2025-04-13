@@ -4,9 +4,9 @@ dotenv.config();
 
 const app: Application = express();
 
-import cors from 'cors'; // move cors up
+import cors from 'cors'; 
 app.use(cors({
-  origin: "*",
+  origin: "https://guided-backend-9hw5.onrender.com",
   credentials: true
 }));
 app.use(express.json());
