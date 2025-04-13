@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Home from './components/Home';
 import Courses from './components/Courses';
 import CreateCourse from './components/CreateCourse';
@@ -10,7 +10,7 @@ import {
   Settings as SettingsIcon, 
   Book, 
   User,
-  ChevronRight,
+
   PlusCircle,
   X // Add close icon
 } from 'lucide-react';
@@ -18,6 +18,7 @@ import {
 const SideBar = ({ selectedComponent, setSelectedComponent, closeSidebar }: any) => {
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
   
+  console.log(hoveredItem)
   const sideBarItems = [
     { name: 'Home', icon: <HomeIcon size={18} />, component: <Home /> },
     { name: 'Courses', icon: <Book size={18} />, component: <Courses /> },
