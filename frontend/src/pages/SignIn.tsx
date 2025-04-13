@@ -123,7 +123,7 @@ const SignIn = () => {
                                  
                                 </>
                             ) : (
-                                'Create Account'
+                                'Log In'
                             )}
                         </button>
                     </form>
