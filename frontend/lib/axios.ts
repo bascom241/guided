@@ -2,6 +2,6 @@ import axios from 'axios';
 
 
 export const axiosInstance = axios.create({
-    baseURL:"http://localhost:5000/api",
+    baseURL:"https://guided-backend-9hw5.onrender.com/api",
     withCredentials:true
 })
