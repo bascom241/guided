@@ -7,7 +7,7 @@ const app: Application = express();
 
 import cors from 'cors'; 
 app.use(cors({
-  origin:"https://guided-edu.onrender.com",
+  origin: "https://guided-edu.onrender.com",
   credentials: true
 }));
 app.use(express.json());
