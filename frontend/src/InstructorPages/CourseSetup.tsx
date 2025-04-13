@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 
 const CourseSetup = () => {
-  const [selectedComponent, setSelectedComponent] = useState(<Home />);
+  const [selectedComponent, setSelectedComponent] = useState<React.ReactNode>(<Home />);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -43,7 +43,7 @@ const CourseSetup = () => {
           fixed h-screen z-40 w-64`}>
         <SideBar
           selectedComponent={selectedComponent}
-          setSelectedComponent={setSelectedComponent}
+          setSelectedComponent={(component) => setSelectedComponent(() => component)}
           closeSidebar={() => setIsSidebarOpen(false)}
         />
       </div>
