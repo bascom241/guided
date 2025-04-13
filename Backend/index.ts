@@ -30,3 +30,7 @@ app.listen(port, (): void => {
   connectDB();
   console.log(`Listening on port ${port}`);
 });
+function cookieParser(): any {
+    throw new Error('Function not implemented.');
+}
+
