@@ -22,7 +22,7 @@ app.use('/api', cartRouter_1.default);
 app.use('/api', userRouter_1.default);
 app.use('/api/course', courseRouter_1.default);
 const port = parseInt(process.env.PORT || '3000', 10);
-app.listen(5000, () => {
+app.listen(port, () => {
     (0, dbConnection_1.default)();
     console.log(`Listening on port ${port}`);
 });
