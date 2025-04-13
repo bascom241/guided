@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import Guided from '../../src/assets/GuidEd.mp4';
 import { BookOpen, Rocket, Award, Users } from 'lucide-react';

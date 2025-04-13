@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { useCourseStore } from '../../store/useCourseStore';
 import { Loader, Loader2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -6,12 +6,13 @@ import { useAuthStore } from '../../store/useAuthStore';
 import { motion } from 'framer-motion';
 
 const Courses = () => {
-    const { getCourses, isFetchingData, getCoursesBySearch, courseContainer, addToCart, addingToCart } = useCourseStore();
+    const { getCourses, isFetchingData, getCoursesBySearch, courseContainer, addToCart } = useCourseStore();
     const { authUser } = useAuthStore() as unknown as { authUser: { user: any } };
     const [loadingCourseId, setLoadingCourseId] = useState<string | null>(null);
     const userID = authUser?.user._id;
     const [selectedPrice, setSelectedPrice] = useState("");
 
+    console.log(selectedPrice)
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search);
         const category = queryParams.get("category");

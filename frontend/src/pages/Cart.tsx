@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { useCourseStore } from "../../store/useCourseStore";
 import { useAuthStore } from "../../store/useAuthStore";
 import { Loader, Trash2, ArrowRight } from "lucide-react";

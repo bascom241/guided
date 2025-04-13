@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Code, Database, Monitor, TrendingUp, BarChart, Shield, Lock, Layers, Smartphone } from 'lucide-react';
 
 const CourseCategories = () => {

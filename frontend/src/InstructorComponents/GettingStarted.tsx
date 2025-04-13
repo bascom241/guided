@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { BookOpen, Video, Share2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 

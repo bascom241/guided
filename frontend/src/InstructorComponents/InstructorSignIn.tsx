@@ -1,6 +1,6 @@
 
-import React, { useState } from 'react'
-import { Eye, EyeOff, Loader, Lock, Mail, User } from 'lucide-react';
+import { useState } from 'react'
+import { Eye, EyeOff, Loader, Lock, Mail} from 'lucide-react';
 import { useAuthStore } from '../../store/useAuthStore';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
@@ -20,7 +20,7 @@ interface showModal {
 const InstructorSignIn: React.FC<showModal> = ({ setShowModal }) => {
 
     const navigate = useNavigate();
-    const { result, isLoggingIn, signIn, signUp } = useAuthStore();
+    const { result, isLoggingIn, signIn} = useAuthStore();
 
     const [showPassword, setShowPassword] = useState(false);
     const [formData, setFormData] = useState({ email: "", password: "", })

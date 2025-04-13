@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { X, PlayCircle, BookOpen, Users, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useEnrollStore } from '../../store/useEnrollStore';
@@ -44,7 +44,7 @@ interface Video {
 
 const CourseDetailBanner: React.FC<CourseDetailBannerProps> = ({ singleCourseContainer }) => {
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
-  const [email,setEmail] = useState("");
+
   const {enrollUser,isEnrolled } = useEnrollStore();
 
  const {authUser} = useAuthStore() as unknown as { authUser: { user: any } };

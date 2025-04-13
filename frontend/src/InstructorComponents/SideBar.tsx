@@ -10,12 +10,12 @@ import {
   Settings as SettingsIcon, 
   Book, 
   User, 
-  CheckCircle,
+
   ChevronRight,
   PlusCircle
 } from 'lucide-react';
 
-const SideBar = ({ selectedComponent, setSelectedComponent }) => {
+const SideBar = ({ selectedComponent, setSelectedComponent }:any) => {
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
   
   const sideBarItems = [

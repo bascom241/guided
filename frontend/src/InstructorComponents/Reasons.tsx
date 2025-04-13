@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { HelpCircle, BookOpen, DollarSign } from "lucide-react";
 
 const Reasons = () => {

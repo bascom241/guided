@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import AuthImagePattern from '../components/skeletons/AuthImagePattern';
 import { Eye, EyeOff, Loader, Lock, Mail, MessageSquare, User } from 'lucide-react';
 import { useAuthStore } from '../../store/useAuthStore';

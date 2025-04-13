@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import Image1 from "../assets/E1.jpg";
@@ -6,7 +6,7 @@ import Image2 from "../assets/E2.jpg";
 import Image3 from "../assets/E3.jpg";
 import Image4 from "../assets/E4.jpg";
 import { motion } from 'framer-motion';
-import { Link } from "react-router-dom";
+
 import { ArrowRight, PlayCircle } from "lucide-react";
 
 // Import Swiper styles

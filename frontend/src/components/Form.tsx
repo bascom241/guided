@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import Learn from '../../src/assets/team-meeting-report-success-manager-invest (1).jpg';
 import { Link } from 'react-router-dom';

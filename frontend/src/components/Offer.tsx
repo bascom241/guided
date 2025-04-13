@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Accessibility, Lock, DollarSign } from 'lucide-react';
 import { motion } from 'framer-motion';
 

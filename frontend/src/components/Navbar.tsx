@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ShoppingCart, Search, Bell, Heart, ChevronRight, LogOut, Edit, BookOpenText, CreditCard, Wallet, Menu, X, User as UserIcon } from 'lucide-react';
+import { ShoppingCart, Search, Bell,  ChevronRight, LogOut, Edit, BookOpenText,  Menu, X,  } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuthStore } from '../../store/useAuthStore';
 import { useCourseStore } from '../../store/useCourseStore';
@@ -17,7 +17,7 @@ const Navbar = ({ authUser }: NavbarProps) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isExploreOpen, setIsExploreOpen] = useState(false);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
-    const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
     const [searchValue, setSearchValue] = useState("");
 
     const navigate = useNavigate();

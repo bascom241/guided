@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { useAuthStore } from '../../../store/useAuthStore';
 import toast from 'react-hot-toast';
 import { useCourseStore } from '../../../store/useCourseStore';
-import { ArrowLeft, ArrowRight, Upload, FileVideo, Image } from 'lucide-react';
+import { ArrowLeft, ArrowRight,  FileVideo, Image } from 'lucide-react';
 import {Loader} from 'lucide-react'
 
 const CreateCourse = () => {

@@ -1,4 +1,4 @@
-import React from "react";
+
 import { motion } from "framer-motion";
 import Banner from "../assets/still-life-books-versus-technology (1).jpg";
 import { Rocket, Award, UserCheck, BookOpen } from "lucide-react";

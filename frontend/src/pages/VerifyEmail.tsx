@@ -1,4 +1,4 @@
-import React, { HtmlHTMLAttributes, useState } from 'react'
+import {  useState } from 'react'
 import { MessageCircleReplyIcon } from 'lucide-react'
 import { useAuthStore } from '../../store/useAuthStore'
 import toast from 'react-hot-toast'

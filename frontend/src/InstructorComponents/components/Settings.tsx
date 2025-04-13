@@ -1,5 +1,5 @@
 import React from 'react'
-import { SettingsIcon, UserIcon, LockIcon, MailIcon, BellIcon, CreditCardIcon } from 'lucide-react'
+import { SettingsIcon, UserIcon, LockIcon,  BellIcon, CreditCardIcon } from 'lucide-react'
 
 const Settings = () => {
   const [activeTab, setActiveTab] = React.useState('account')
