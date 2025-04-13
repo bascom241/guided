@@ -6,7 +6,7 @@ const app: Application = express();
 
 import cors from 'cors'; // move cors up
 app.use(cors({
-  origin: ["http://localhost:5173", "https://guided-edu.onrender.com"],
+  origin: "*",
   credentials: true
 }));
 app.use(express.json());
