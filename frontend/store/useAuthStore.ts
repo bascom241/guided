@@ -31,12 +31,14 @@ export const useAuthStore = create<AuthState>((set) => ({
     isVerifyingEmail:false,
     checkAuth: async () => {
         try {
+            set({isCheckingAuth:true})
             const response = await axiosInstance.get('/check-auth');
             set({ authUser: response.data });
 
         } catch (error) {
             console.log(error);
             set({ authUser: null })
+            set({isCheckingAuth:false})
         }finally{
             set({isCheckingAuth:false})
         }
