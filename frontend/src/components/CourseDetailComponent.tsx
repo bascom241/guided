@@ -58,17 +58,23 @@ const CourseDetailBanner: React.FC<CourseDetailBannerProps> = ({ singleCourseCon
   const closeModal = () => {
     setSelectedVideo(null);
   };
+  
+const handleEnroll = () => {
+  if (!authUser || !userID || !userEmail) {
+    alert("Please log in to enroll in this course.");
+    return;
+  }
 
-  const handleEnroll = () => {
-    if (!authUser || !userID || !userEmail) {
-      alert("Please log in to enroll in this course.");
-      return;
-    }
+  if (typeof enrollUser === "function") {
     enrollUser(userID, singleCourseContainer._id, {
       email: userEmail,
       amount: singleCourseContainer.price,
     });
-  };
+  } else {
+    console.error("enrollUser is not a function or is undefined.");
+  }
+};
+
 
   return (
     <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
