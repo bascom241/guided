@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { X, PlayCircle, BookOpen, Users, Clock } from 'lucide-react';
+import { X, PlayCircle, BookOpen, Users, Clock, Loader } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useEnrollStore } from '../../store/useEnrollStore';
 import { useAuthStore } from '../../store/useAuthStore';
-import { Loader } from 'lucide-react';
+
 type CourseType = {
-  courseId: string
-  _id: string
-}
+  courseId: string;
+  _id: string;
+};
 
 interface CourseDetailBannerProps {
   singleCourseContainer: {
@@ -45,19 +45,30 @@ interface Video {
 const CourseDetailBanner: React.FC<CourseDetailBannerProps> = ({ singleCourseContainer }) => {
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
 
-  const {enrollUser,isEnrolled } = useEnrollStore();
+  const { enrollUser, isEnrolled } = useEnrollStore();
+  const { authUser } = useAuthStore() as { authUser?: { user?: any } };
 
- const {authUser} = useAuthStore() as unknown as { authUser: { user: any } };
- const userEmail = authUser.user.email;
- const userID = authUser?.user._id;
+  const userEmail = authUser?.user?.email;
+  const userID = authUser?.user?._id;
 
   const openModal = (video: Video) => {
     setSelectedVideo(video);
-  }
+  };
 
   const closeModal = () => {
     setSelectedVideo(null);
-  }
+  };
+
+  const handleEnroll = () => {
+    if (!authUser || !userID || !userEmail) {
+      alert("Please log in to enroll in this course.");
+      return;
+    }
+    enrollUser(userID, singleCourseContainer._id, {
+      email: userEmail,
+      amount: singleCourseContainer.price,
+    });
+  };
 
   return (
     <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
@@ -112,22 +123,14 @@ const CourseDetailBanner: React.FC<CourseDetailBannerProps> = ({ singleCourseCon
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 bg-white flex items-center justify-center text-purple-600 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all"
-                
-                onClick={()=>{ if(enrollUser){
-                  enrollUser(userID,singleCourseContainer._id,{email:userEmail,amount:singleCourseContainer.price})
-                }}}
+                onClick={handleEnroll}
               >
-                {
-                  isEnrolled ? <Loader className='animate-spin size-5 ' color='white'  /> : "Enroll Now"
-                }
-             
+                {isEnrolled ? <Loader className="animate-spin size-5" color="white" /> : "Enroll Now"}
               </motion.button>
             </div>
           </motion.div>
         </div>
       </div>
-
-      
 
       {/* Course Content Section */}
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-8">
@@ -139,7 +142,6 @@ const CourseDetailBanner: React.FC<CourseDetailBannerProps> = ({ singleCourseCon
           Course Curriculum
         </motion.h2>
 
-        {/* Video Lessons */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {singleCourseContainer.videos.map((video) => (
             <motion.div
@@ -182,9 +184,7 @@ const CourseDetailBanner: React.FC<CourseDetailBannerProps> = ({ singleCourseCon
         >
           <div className="p-8 flex flex-col md:flex-row gap-8 text-white">
             <div className="w-full md:w-1/4 flex flex-col items-center">
-              <div className="w-32 h-32 rounded-full bg-gray-200 dark:bg-gray-700 mb-4 overflow-hidden">
-                {/* Instructor image would go here */}
-              </div>
+              <div className="w-32 h-32 rounded-full bg-gray-200 dark:bg-gray-700 mb-4 overflow-hidden"></div>
               <h3 className="text-xl font-bold text-center">
                 {singleCourseContainer.instructor.firstName} {singleCourseContainer.instructor.lastName}
               </h3>
@@ -224,11 +224,7 @@ const CourseDetailBanner: React.FC<CourseDetailBannerProps> = ({ singleCourseCon
               <X size={24} />
             </button>
             <div className="aspect-video bg-black">
-              <video 
-                controls 
-                autoPlay 
-                className="w-full h-full object-contain"
-              >
+              <video controls autoPlay className="w-full h-full object-contain">
                 <source src={selectedVideo.videoFilePath} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
