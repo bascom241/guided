@@ -27,7 +27,7 @@ router.put("/update-course/:courseId/:userId",verifyToken,  upload.fields([
 ]),(req,res)=> updateCourse(req as CustomRequest,res));
 router.delete("/delete-course/:courseId/:userId",verifyToken,deleteCourse);
 router.get("/get-single-course/:courseId",getASingleCourse);
-router.get("/get-instructor-courses/:userId",verifyToken,isInstructor,getAllInstructorCourses)
+router.get("/get-instructor-courses/:userId",isInstructor,getAllInstructorCourses)
 router.get('/categories', getCategories);
 router.post("/rate/:courseId",addRating);
 router.post("/comment/:courseId",addComment);
