@@ -18,7 +18,7 @@ roleMiddleWare_1.default, multerMiddleWare_1.upload.fields([
 ]), (req, res) => (0, courseController_1.uploadFilesAndCreateCourse)(req, res) // Type assertion here
 );
 router.get("/get-courses", courseController_1.getAllCourses);
-router.put("/update-course/:courseId/:userId", verifyToken_1.default, multerMiddleWare_1.upload.fields([
+router.put("/update-course/:courseId/:userId", multerMiddleWare_1.upload.fields([
     { name: 'thumbnail', maxCount: 1 }, // Expect a single thumbnail file
     { name: 'videos', maxCount: 50 }, // Expect multiple videos, adjust maxCount as needed
 ]), (req, res) => (0, courseController_1.updateCourse)(req, res));
